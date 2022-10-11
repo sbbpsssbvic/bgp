@@ -377,15 +377,11 @@ body { font-family: sans-serif; }
 
 
 
+
 				
 							  
 							  
-	/* external css: flickity.css, fullscreen.css */
-
-* { box-sizing: border-box; }
-
-body { font-family: sans-serif; }
-
+	
 .carousel {
   background: #222;
 }
@@ -400,18 +396,14 @@ body { font-family: sans-serif; }
   justify-content: center;
 }
 
-.carousel.is-fullscreen .carousel-cell {
-  height: 100%;
-}
+
 
 .carousel-cell-image {
   display: block;
   max-height: 100%;
 }
 
-.carousel.is-fullscreen .carousel-cell-image {
-  max-width: 100%;
-}
+
 						  
 							  
 			</style>				  
@@ -424,7 +416,7 @@ body { font-family: sans-serif; }
 	<h1>Image-Gallery</h1>
 
 <!-- Flickity HTML init -->
-<div class="carousel" data-flickity='{ "fullscreen": true, "lazyLoad":1 }'>
+<div class="carousel" data-flickity='{ "autoPlay": true, "lazyLoad":1 }'>
  <div class="carousel-cell"><img class="carousel-cell-image" data-flickity-lazyload="https://edistrict.up.gov.in/edistrictup/Event/6.jpg"/></div>
  <div class="carousel-cell"><img class="carousel-cell-image" data-flickity-lazyload="https://edistrict.up.gov.in/edistrictup/Event/1.jpg"/></div>
   <div class="carousel-cell"><img src="https://edistrict.up.gov.in/edistrictup/Event/2.jpg"></div>
