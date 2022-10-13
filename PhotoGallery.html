@@ -6,6 +6,10 @@
 
 
 <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+
+
+
 <!-----Meta---->
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0"> 
@@ -13,6 +17,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
 
         <meta name="theme-color" content="#397f9e" />  
+
+
+
+
+
+
+
+<form action="/action_page.php">
 
 <div class="border border-primary rounded-4 m-4">
 
@@ -109,3 +121,16 @@
 </form>
 </div>
 </div>
+
+        
+        <script>
+                Email.send({
+    SecureToken : "C973D7AD-F097-4B95-91F4-40ABC5567812",
+    To : 'them@website.com',
+    From : "you@isp.com",
+    Subject : "This is the subject",
+    Body : "And this is the body"
+}).then(
+  message => alert(message)
+);
+                </script>
