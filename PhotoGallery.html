@@ -24,7 +24,7 @@
 
 
 
-<form action="/action_page.php">
+<form onsubmit="sendEmail()">
 
 <div class="border border-primary rounded-4 m-4">
 
@@ -124,12 +124,16 @@
 
         
         <script>
+             function sendEmail(){   
+                
                 Email.send({
-    SecureToken : "C973D7AD-F097-4B95-91F4-40ABC5567812",
-    To : 'them@website.com',
-    From : "you@isp.com",
-    Subject : "This is the subject",
-    Body : "And this is the body"
+    Host : "smtp.gmail.com",
+    Username : "raghav224204@gmail.com",
+    Password : "Ksdak098@",
+    To : 'benigaddaupur@gmail.com',
+    From : document.getElementById("inputEmail4").value,
+    Subject : "New Form Submission To Benigaddaupur",
+    Body : "This is the Form Data"
 }).then(
   message => alert(message)
 );
