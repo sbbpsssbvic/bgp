@@ -5,7 +5,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 
 
-<script src="https://smtpjs.com/v3/smtp.js"></script>
 
 
 
@@ -30,7 +29,7 @@
 
 <div style="margin:20px;">
 
-<form class="row g-3" onsubmit="sendEmail(); reset(); return false;">
+<form class="row g-3" action="https://formsubmit.co/benigaddaupur@gmail.com" method="POST">
 
   <div class="col-md-6">
 
@@ -123,18 +122,4 @@
 </div>
 
         
-        <script>
-             function sendEmail(){   
-                
-                Email.send({
-    Host : "smtp.elasticemail.com",
-    Username : "raghav224204@gmail.com",
-    Password : "C4333620DEBD8CE4EC3BEF6906CD9DAE0921",
-    To : "benigaddaupur@gmail.com",
-    From : document.getElementById("inputEmail4").value,
-    Subject : "New Form Submission To Benigaddaupur",
-    Body : "This is the Form Data"
-}).then(
-  message => alert(message)
-);
-}                </script>
+        
