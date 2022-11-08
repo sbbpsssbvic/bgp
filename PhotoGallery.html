@@ -25,117 +25,19 @@ body{
 
 
 
-@charset "UTF-8";
-
-body {
-    padding-top: 60px;
-    background: #222;
-    color: #fff;
-}
-h1 {
-    font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, sans-serif;
-}
-a {
-    color: orange;
-}
-a:hover {
-    color: lightblue;
-    text-decoration: none;
-}
-.modal {
-	overflow: auto;
-	color: #333;
+.btn:focus, .btn:active, button:focus, button:active {
+  outline: none !important;
+  box-shadow: none !important;
 }
 
-
-/*
- * Bootstrap Image Gallery CSS 3.0.0
- * https://github.com/blueimp/Bootstrap-Image-Gallery
- *
- * Copyright 2013, Sebastian Tschan
- * https://blueimp.net
- *
- * Licensed under the MIT license:
- * https://www.opensource.org/licenses/MIT
- */
-
-.blueimp-gallery .modal-body {
-	position: relative;
-	text-align: center;
-	padding: 0 0 56.25% 0;
-	overflow: hidden;
-	cursor: pointer;
-}
-.blueimp-gallery .modal-footer {
-	margin: 0;
-}
-.blueimp-gallery .modal-body img,
-.blueimp-gallery .modal-body .video-content video,
-.blueimp-gallery .modal-body .video-content iframe,
-.blueimp-gallery .modal-body .video-content a {
-	max-width: 100%;
-	max-height: 100%;
-	margin: auto;
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-}
-.blueimp-gallery .modal-body .video-content video {
- 	display: none;
-}
-.blueimp-gallery .modal-body .video-playing video {
-	display: block;
-}
-.blueimp-gallery .modal-body .video-content iframe {
-	width: 100%;
-	height: 100%;
-	border: none;
-	left: 100%;
-}
-.blueimp-gallery .modal-body .video-playing iframe {
-	left: 0;
-}
-.blueimp-gallery .modal-body .video-playing img,
-.blueimp-gallery .modal-body .video-playing a {
- 	display: none;
-}
-.blueimp-gallery .modal-body .video-content a {
-	cursor: pointer;
-}
-.blueimp-gallery .modal-body .video-content a:after {
-	font-family: "Glyphicons Halflings";
-	-webkit-font-smoothing: antialiased;
-	content: "\e029";
-	font-size: 64px;
-	line-height: 64px;
-	width: 64px;
-	height: 64px;
-	position: absolute;
-	top: 50%;
-	margin: -32px 0 0 -32px;
-}
-.blueimp-gallery .modal-body .video-loading a {
-	background: url(../img/loading.gif) center no-repeat;
-	background-size: 64px 64px;
-}
-.blueimp-gallery .modal-body .video-loading a:after {
-	content: none;
+#image-gallery .modal-footer{
+  display: block;
 }
 
-@media screen and (min-width: 768px) {
-  .blueimp-gallery .modal-dialog {
-    right: auto;
-    left: auto;
-	width: auto;
-    max-width: 900px;
-    padding-left: 5%;
-    padding-right: 5%;
-  }
+.thumb{
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
-
-
 
   
 
@@ -146,198 +48,100 @@ a:hover {
 
   
 <script>
-/*
- * Bootstrap Image Gallery 3.0.1
- * https://github.com/blueimp/Bootstrap-Image-Gallery
- *
- * Copyright 2013, Sebastian Tschan
- * https://blueimp.net
- *
- * Licensed under the MIT license:
- * https://www.opensource.org/licenses/MIT
- */
+let modalId = $('#image-gallery');
 
-/*global define, window */
+$(document)
+  .ready(function () {
 
-(function (factory) {
-    'use strict';
-    if (typeof define === 'function' && define.amd) {
-        define([
-            'jquery',
-            './blueimp-gallery'
-        ], factory);
-    } else {
-        factory(
-            window.jQuery,
-            window.blueimp.Gallery
-        );
+    loadGallery(true, 'a.thumbnail');
+
+    //This function disables buttons when needed
+    function disableButtons(counter_max, counter_current) {
+      $('#show-previous-image, #show-next-image')
+        .show();
+      if (counter_max === counter_current) {
+        $('#show-next-image')
+          .hide();
+      } else if (counter_current === 1) {
+        $('#show-previous-image')
+          .hide();
+      }
     }
-}(function ($, Gallery) {
-    'use strict';
 
-    $.extend(Gallery.prototype.options, {
-        useBootstrapModal: true
-    });
+    /**
+     *
+     * @param setIDs        Sets IDs when DOM is loaded. If using a PHP counter, set to false.
+     * @param setClickAttr  Sets the attribute for the click handler.
+     */
 
-    var close = Gallery.prototype.close,
-        imageFactory = Gallery.prototype.imageFactory,
-        videoFactory = Gallery.prototype.videoFactory,
-        textFactory = Gallery.prototype.textFactory;
+    function loadGallery(setIDs, setClickAttr) {
+      let current_image,
+        selector,
+        counter = 0;
 
-    $.extend(Gallery.prototype, {
+      $('#show-next-image, #show-previous-image')
+        .click(function () {
+          if ($(this)
+            .attr('id') === 'show-previous-image') {
+            current_image--;
+          } else {
+            current_image++;
+          }
 
-        modalFactory: function (obj, callback, factoryInterface, factory) {
-            if (!this.options.useBootstrapModal || factoryInterface) {
-                return factory.call(this, obj, callback, factoryInterface);
-            }
-            var that = this,
-                modalTemplate = this.container.children('.modal'),
-                modal = modalTemplate.clone().show()
-                    .on('click', function (event) {
-                        // Close modal if click is outside of modal-content:
-                        if (event.target === modal[0] ||
-                                event.target === modal.children()[0]) {
-                            event.preventDefault();
-                            event.stopPropagation();
-                            that.close();
-                        }
-                    }),
-                element = factory.call(this, obj, function (event) {
-                    callback({
-                        type: event.type,
-                        target: modal[0]
-                    });
-                    modal.addClass('in');
-                }, factoryInterface);
-            modal.find('.modal-title').text(element.title || String.fromCharCode(160));
-            modal.find('.modal-body').append(element);
-            return modal[0];
-        },
-
-        imageFactory: function (obj, callback, factoryInterface) {
-            return this.modalFactory(obj, callback, factoryInterface, imageFactory);
-        },
-
-        videoFactory: function (obj, callback, factoryInterface) {
-            return this.modalFactory(obj, callback, factoryInterface, videoFactory);
-        },
-
-        textFactory: function (obj, callback, factoryInterface) {
-            return this.modalFactory(obj, callback, factoryInterface, textFactory);
-        },
-
-        close: function () {
-            this.container.find('.modal').removeClass('in');
-            close.call(this);
-        }
-
-    });
-
-}));
-
-
-/*
- * Bootstrap Image Gallery JS Demo 3.0.1
- * https://github.com/blueimp/Bootstrap-Image-Gallery
- *
- * Copyright 2013, Sebastian Tschan
- * https://blueimp.net
- *
- * Licensed under the MIT license:
- * https://www.opensource.org/licenses/MIT
- */
-
-/*jslint unparam: true */
-/*global blueimp, $ */
-
-$(function () {
-    'use strict';
-
-    // Load demo images from flickr:
-    $.ajax({
-        // Flickr API is SSL only:
-        // https://code.flickr.net/2014/04/30/flickr-api-going-ssl-only-on-june-27th-2014/
-        url: 'https://api.flickr.com/services/rest/',
-        data: {
-            format: 'json',
-            method: 'flickr.interestingness.getList',
-            api_key: '7617adae70159d09ba78cfec73c13be3' // jshint ignore:line
-        },
-        dataType: 'jsonp',
-        jsonp: 'jsoncallback'
-    }).done(function (result) {
-        var linksContainer = $('#links'),
-            baseUrl;
-        // Add the demo images as links with thumbnails to the page:
-        $.each(result.photos.photo, function (index, photo) {
-            baseUrl = 'https://farm' + photo.farm + '.static.flickr.com/' +
-                photo.server + '/' + photo.id + '_' + photo.secret;
-            $('<a/>')
-                .append($('<img>').prop('src', baseUrl + '_s.jpg'))
-                .prop('href', baseUrl + '_b.jpg')
-                .prop('title', photo.title)
-                .attr('data-gallery', '')
-                .appendTo(linksContainer);
+          selector = $('[data-image-id="' + current_image + '"]');
+          updateGallery(selector);
         });
-    });
 
-    $('#borderless-checkbox').on('change', function () {
-        var borderless = $(this).is(':checked');
-        $('#blueimp-gallery').data('useBootstrapModal', !borderless);
-        $('#blueimp-gallery').toggleClass('blueimp-gallery-controls', borderless);
-    });
+      function updateGallery(selector) {
+        let $sel = selector;
+        current_image = $sel.data('image-id');
+        $('#image-gallery-title')
+          .text($sel.data('title'));
+        $('#image-gallery-image')
+          .attr('src', $sel.data('image'));
+        disableButtons(counter, $sel.data('image-id'));
+      }
 
-    $('#fullscreen-checkbox').on('change', function () {
-        $('#blueimp-gallery').data('fullScreen', $(this).is(':checked'));
-    });
+      if (setIDs == true) {
+        $('[data-image-id]')
+          .each(function () {
+            counter++;
+            $(this)
+              .attr('data-image-id', counter);
+          });
+      }
+      $(setClickAttr)
+        .on('click', function () {
+          updateGallery($(this));
+        });
+    }
+  });
 
-    $('#image-gallery-button').on('click', function (event) {
-        event.preventDefault();
-        blueimp.Gallery($('#links a'), $('#blueimp-gallery').data());
-    });
+// build key actions
+$(document)
+  .keydown(function (e) {
+    switch (e.which) {
+      case 37: // left
+        if ((modalId.data('bs.modal') || {})._isShown && $('#show-previous-image').is(":visible")) {
+          $('#show-previous-image')
+            .click();
+        }
+        break;
 
-    $('#video-gallery-button').on('click', function (event) {
-        event.preventDefault();
-        blueimp.Gallery([
-            {
-                title: 'Sintel',
-                href: 'https://archive.org/download/Sintel/sintel-2048-surround_512kb.mp4',
-                type: 'video/mp4',
-                poster: 'https://i.imgur.com/MUSw4Zu.jpg'
-            },
-            {
-                title: 'Big Buck Bunny',
-                href: 'https://upload.wikimedia.org/wikipedia/commons/7/75/' +
-                    'Big_Buck_Bunny_Trailer_400p.ogg',
-                type: 'video/ogg',
-                poster: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/' +
-                    'Big.Buck.Bunny.-.Opening.Screen.png/' +
-                    '800px-Big.Buck.Bunny.-.Opening.Screen.png'
-            },
-            {
-                title: 'Elephants Dream',
-                href: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/8/83/' +
-                    'Elephants_Dream_%28high_quality%29.ogv/' +
-                    'Elephants_Dream_%28high_quality%29.ogv.360p.webm',
-                type: 'video/webm',
-                poster: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/' +
-                    'Elephants_Dream_s1_proog.jpg/800px-Elephants_Dream_s1_proog.jpg'
-            },
-            {
-                title: 'LES TWINS - An Industry Ahead',
-                type: 'text/html',
-                youtube: 'zi4CIXpx7Bg'
-            },
-            {
-                title: 'KN1GHT - Last Moon',
-                type: 'text/html',
-                vimeo: '73686146',
-                poster: 'https://secure-a.vimeocdn.com/ts/448/835/448835699_960.jpg'
-            }
-        ], $('#blueimp-gallery').data());
-    });
+      case 39: // right
+        if ((modalId.data('bs.modal') || {})._isShown && $('#show-next-image').is(":visible")) {
+          $('#show-next-image')
+            .click();
+        }
+        break;
 
-});
+      default:
+        return; // exit this handler for other keys
+    }
+    e.preventDefault(); // prevent the default action (scroll / move caret)
+  });
+
+
 
 </script>
 
