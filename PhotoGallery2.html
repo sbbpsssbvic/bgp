@@ -1,0 +1,118 @@
+
+<html>
+<head>
+  <style>
+    /* Add some style to the gallery */
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .gallery-item {
+      position: relative;
+      width: auto;
+      height: 200px;
+      overflow: hidden;
+      margin: 10px;
+      border: 2px solid #333;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease-out;
+      cursor: pointer;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.1);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease-out;
+    }
+
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility 0s linear 0.5s, opacity 0.5s ease-out;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox img {
+      width: 80%;
+      height: auto;
+      border: 8px solid #fff;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .lightbox.active {
+      visibility: visible;
+      opacity: 1;
+      transition: visibility 0s linear 0s, opacity 0.5s ease-out;
+    }
+  </style>
+</head>
+<body>
+  <div class="gallery">
+    <!-- Add your images here -->
+    <div class="gallery-item">
+      <img src="https://bit.ly/3Q9gvIA" alt="Image 1">
+    </div>
+    <div class="gallery-item">
+      <img src="https://bit.ly/3Q9gvIA" alt="Image 2">
+    </div>
+    <div class="gallery-item">
+      <img src="https://bit.ly/3Q9gvIA" alt="Image 3">
+    </div>
+    <div class="gallery-item">
+      <img src="https://bit.ly/3Q9gvIA" alt="Image 4">
+    </div>
+    <div class="gallery-item">
+      <img src="https://bit.ly/3Q9gvIA" alt="Image 5">
+    </div>
+    <div class="gallery-item">
+      <img src="https://bit.ly/3Q9gvIA" alt="Image 6">
+    </div>
+    <div class="gallery-item">
+      <img src="https://bit.ly/3Q9gvIA" alt="Image 7">
+    </div>
+    <div class="gallery-item">
+      <img src="https://bit.ly/3Q9gvIA" alt="Image 8">
+    </div>
+    
+  <div class="gallery-item">
+      <img src="https://bit.ly/3Q9gvIA" alt="Image 9">
+    </div>
+    <div class="gallery-item">
+      <img src="https://bit.ly/3Q9gvIA" alt="Image 10">
+    </div>
+    <div class="gallery-item">
+      <img src="https://bit.ly/3Q9gvIA" alt="Image 11">
+    </div>
+  </div>
+  <div class="lightbox">
+    <img src="" alt="Lightbox image">
+  </div>
+  <script>
+    // Get all the gallery items and the lightbox element
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const lightbox = document.querySelector('.lightbox');
+    const lightboxImg = lightbox.querySelector('img');
+
+    // Add a click event to each gallery item
+    galleryItems.forEach(item => {
+      item.addEventListener('click', e => {
+        // Get the image src and alt text
+        const imgSrc = e.currentTarget.querySelector('img').src;
+        const imgAlt = e
+</script>
