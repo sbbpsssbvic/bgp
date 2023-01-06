@@ -331,7 +331,7 @@ a:hover {
 <!-- Create the category buttons -->
 <div align="center" bg-color="black">
         <button class="category-btn active font-gov" onclick="filterImages('all')">सभी</button>
-        <button class="category-btn font-gov" onclick="filterImages('Pools')">तालाब</button>
+        <button class="category-btn font-gov" onclick="filterImages('Pools') toggleCaption()">तालाब</button>
 	<button class="category-btn font-gov" onclick="filterImages('Secretariat')">ग्राम सचिवालय</button>
         <button class="category-btn font-gov" onclick="filterImages('Hospitals')">अस्पताल</button>
 	<button class="category-btn font-gov" onclick="filterImages('Schools')">विद्यालय</button>
@@ -404,5 +404,8 @@ a:hover {
   } var preloader=document.getElementById('loading'); function myFunction(){preloader.style.display='none';}
 	
 	
-	
+	function toggleCaption() {
+    const caption = document.querySelector('.caption');
+    caption.style.display = (caption.style.display === 'none') ? 'block' : 'none';
+  }
 </script></body>
