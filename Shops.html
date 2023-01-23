@@ -480,6 +480,84 @@ fot better  result view as full-page
 
 -->
 
+<script>
+	* { box-sizing: border-box; }
 
+body {
+  font-family: sans-serif;
+}
+
+/* ---- input ---- */
+
+input[type="text"] {
+  font-size: 20px;
+}
+
+.container {
+  max-width: 100%;
+  padding: 1rem;
+  margin-bottom: 10px;
+}
+
+/* ---- button ---- */
+
+.button {
+  display: inline-block;
+  padding: 0.5em 1.0em;
+  margin-bottom: 10px;
+  background: #EEE;
+  border: none;
+  border-radius: 7px;
+  background-image: linear-gradient( to bottom, hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 0.2) );
+  color: #222;
+  font-family: sans-serif;
+  font-size: 16px;
+  text-shadow: 0 1px white;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #8CF;
+  text-shadow: 0 1px hsla(0, 0%, 100%, 0.5);
+  color: #222;
+}
+
+.button:active,
+.button.is-checked {
+  background-color: #28F;
+}
+
+.button.is-checked {
+  color: white;
+  text-shadow: 0 -1px hsla(0, 0%, 0%, 0.8);
+}
+
+.button:active {
+  box-shadow: inset 0 1px 10px hsla(0, 0%, 0%, 0.8);
+}
+
+.bg-primary
+.bg-secondary
+.bg-success
+.bg-danger
+.bg-info
+.bg-dark, a:link, a:visited, a:hover, a:active {
+  color: #ffffff;
+}
+
+.bg-primary
+.bg-secondary
+.bg-success
+.bg-danger
+.bg-info
+.bg-dark
+.bg-warning {
+  color: #ffffff;
+}
+
+.card {
+  margin: 0 1em 1em 0;
+}        
+	</script>
 	
 	
