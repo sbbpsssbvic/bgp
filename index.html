@@ -146,7 +146,7 @@
 </style>
 
 <!----------Navigation Bar---------->
-<header id="header" class="">
+<div id="header" class="">
 <nav class="navbar navbar-expand-lg bg-light sticky-top navbar-light"> <div class="container-fluid"><a class="navbar-brand" href="/"><img src="http://drive.google.com/uc?id=1-cwAuHcV9uSbKTaozvJGrydZQs0BqIx9"width="240" height="50"  class="d-inline-block img-fluid align-top " alt="Banigaddaupur"></a>
 
 	<button class="btn btn-navbar button navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">    <span class="navbar-toggler-icon"></span>  </button>  <div class="collapse navbar-collapse" id="navbarNavDropdown">    <ul class="navbar-nav">      <li class="nav-item active">        <a class="nav-link" href="http://Benigaddaupur.netlify.com/">Home <span class="sr-only">(current)</span></a>      </li>     
@@ -196,7 +196,7 @@
   </div>
 
 </div>
-</header>
+</div>
 <!----------Welcome Audio---------->
 
 <audio controls autoplay hidden="hidden"> <source src="https://drive.google.com/uc?id=1k7CG3wb5IClPW-3dRYuzQrTboB7ngWZZ" type="audio/mpeg"> <source src="https://drive.google.com/uc?id=1k7CG3wb5IClPW-3dRYuzQrTboB7ngWZZ"> <source src="https://drive.google.com/uc?id=1k7CG3wb5IClPW-3dRYuzQrTboB7ngWZZ"></audio><script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script><script> createjs.Sound.registerSound("https://drive.google.com/uc?id=1k7CG3wb5IClPW-3dRYuzQrTboB7ngWZZ", ""); setTimeout(function () { createjs.Sound.play(""); }, 3000)</script>  
@@ -672,7 +672,14 @@
   background-size: 0 2px, 100% 2px;
 }
 
-
+#header {
+  background: #fff;
+  border-bottom: 1px rgba(0, 0, 0, 0.07) solid;
+  z-index: 99;
+  &.--not-top {
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  }
+}
 	
 	 
 	 
@@ -973,7 +980,15 @@ body { font-family: sans-serif; }
 	//Preloader
 	var preloader=document.getElementById('loading'); function myFunction(){preloader.style.display='none';}
 			    
-			    
+	//Main navigation scroll spy for shadow
+$(window).scroll(function() {
+  var y = $(window).scrollTop();
+  if (y > 0) {
+    $("#header").addClass('--not-top');
+  } else {
+    $("#header").removeClass('--not-top');
+  }
+});		    
 
 
 </script>        
