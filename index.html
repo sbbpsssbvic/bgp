@@ -574,15 +574,6 @@
 	.notification 
 	{margin-right:6px; bottom:4px;}
 		
-	#header {
-  background: #fff;
-  border-bottom: 1px rgba(0, 0, 0, 0.07) solid;
-  z-index: 99;
-  &.--not-top {
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
-  }
-}
-	
 	
 	
 </style>    
@@ -983,14 +974,6 @@ body { font-family: sans-serif; }
 	var preloader=document.getElementById('loading'); function myFunction(){preloader.style.display='none';}
 			    
 			    
-//Main navigation scroll spy for shadow
-$(window).scroll(function() {
-  var y = $(window).scrollTop();
-  if (y > 0) {
-    $("#header").addClass('--not-top');
-  } else {
-    $("#header").removeClass('--not-top');
-  }
-});
+
 
 </script>        
