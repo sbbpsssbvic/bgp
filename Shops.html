@@ -134,7 +134,7 @@
       <input type="text" class="form-control" id="quicksearch" aria-describedby="filterIt" placeholder="🔍 नंबर, नाम, कैटेगरी, आदि लिखिए">
     </div>   </div>
 
-
+<div id="loading">कृपया प्रतीक्षा करें, दुकानें लोड हो रही हैं</div>
 
   <!--
   <div class"row">
@@ -800,7 +800,10 @@ input[type="text"] {
 }
 
 	
-	
+	#loading { 
+		position: fixed; 
+		width: 100%; height:100vh; background: #FFFEFFED url('https://media.tenor.com/k3VfwdRd6cEAAAAi/loading-load.gif') no-repeat center ; background-size:20%; z-index: 9999999;}
+	 
 	
 	
 	
@@ -876,7 +879,9 @@ function debounce( fn, threshold ) {
 }
 
 
-
+//Preloader
+	var preloader=document.getElementById('loading'); function myFunction(){preloader.style.display='none';}
+		
 
 
 
