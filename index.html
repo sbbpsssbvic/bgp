@@ -156,15 +156,15 @@
 	<div align="right" class="collapse navbar-collapse" id="navbarNavDropdown">    
 	<ul class="navbar-nav fw-bold">      
 
-	<li class="nav-item fw-bold active"> <a id="grad-hover" class="nav-link" href="/">होमपेज <span class="sr-only">(current) </span></a>    </li>     
+	<li class="nav-item fw-bold active"> <a id="grad-hover-nav" class="nav-link" href="/">होमपेज <span class="sr-only">(current) </span></a>    </li>     
 
-	<li class="nav-item fw-bold"> <a id="grad-hover" class="nav-link" href="http://wa.me/918127791741">सम्पर्क</a>      </li>      
+	<li class="nav-item fw-bold"> <a id="grad-hover-nav" class="nav-link" href="http://wa.me/918127791741">सम्पर्क</a>      </li>      
 
-	<li class="nav-item fw-bold"> <a id="grad-hover" class="nav-link  " href="/donation" data-bs-toggle="modal" data-bs-target="#exampleModal"> दानपेटिका </a>      </li>  
+	<li class="nav-item fw-bold"> <a id="grad-hover-nav" class="nav-link  " href="/donation" data-bs-toggle="modal" data-bs-target="#exampleModal"> दानपेटिका </a>      </li>  
 
 	<li class="nav-item fw-bold dropdown">       
 
-		<a id="grad-hover" class="nav-link dropdown-toggle " href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">त्योहार </a>       
+		<a id="grad-hover-nav" class="nav-link dropdown-toggle " href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">त्योहार </a>       
 
 		<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">         
 
@@ -180,7 +180,7 @@
 
 	<li class="nav-item dropdown">       
 
-		<a id="grad-hover" class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> गैलरी </a>       
+		<a id="grad-hover-nav" class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> गैलरी </a>       
 
 		<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">          
 
@@ -190,7 +190,7 @@
 
 	<li class="nav-item">            
 
-                        <a id="grad-hover" class="nav-link w-navak" href="/shops">दुकानें खोजें </a>
+                        <a id="grad-hover-nav" class="nav-link w-navak" href="/shops">दुकानें खोजें </a>
 
 	</li>
 
@@ -697,7 +697,34 @@
 	 
 	 
 
+#grad-hover-nav {
+  background:
+    linear-gradient(
+      to right,
+      rgba(100, 200, 200, 1),
+      rgba(100, 200, 200, 1)
+    ),
+    linear-gradient(
+      to right,
+      rgba(255, 0, 0, 1),
+      rgba(255, 0, 180, 1),
+      rgba(0, 100, 200, 1)
+  );
+  background-size: 100% 2px, 0 2px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;
+}
+
+#grad-hover-nav:hover {
+  background-size: 0 2px, 100% 2px;
+}
+
 #grad-hover {
+  color: inherit;
+  
+}
+	 #grad-hover {
   background:
     linear-gradient(
       to right,
@@ -719,9 +746,6 @@
 #grad-hover:hover {
   background-size: 0 2px, 100% 2px;
 }
-
-
-	 
 	 
 	 
 </style>
