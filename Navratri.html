@@ -359,7 +359,37 @@
 		
 	}
 	
-	
+	.navbar-inner {
+  box-shadow: 0px 4px 8px #888888;
+}
+
+.navbar-brand {
+  background: #F8F8F8;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  position: absolute;
+  box-shadow: 0px 10px 8px #888888;
+  margin-top: -25px;
+  padding-top: 29px;
+  padding-left: 29px;
+}
+.navbar-brand:before{
+  /* bigger than the circle to mask the shadow 1*/
+  width:200px;
+  /* same height as navbar */
+  height:50px;
+  content:".";
+  overflow:hidden;
+  text-indent:99999px;
+  display:block;
+  background: #F8F8F8;
+  position: absolute;
+  /* cause your div has margin -25px */
+  top:25px;
+  /* so it will mask everything on the sides */
+  left:-15px;
+}
 </style>
 
 
