@@ -318,6 +318,42 @@
 
 
 <style>
+	
+	/* Gradient Border Box R&Y */
+.ry-gradient-box {
+  
+  display: flex;
+  align-items: center;
+  //width: 50vw;
+  width: 90%;
+  margin: auto;
+  max-width: 22em;
+
+  position: relative;
+  padding: 30% 2em;
+  box-sizing: border-box;
+
+  $border: 5px;
+  color: #FFF;
+  background: #000;
+  background-clip: padding-box; /* !importanté */
+  border: solid $border transparent; /* !importanté */
+  border-radius: 1em;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: -1;
+    margin: -$border; /* !importanté */
+    border-radius: inherit; /* !importanté */
+    background: linear-gradient(to right, red, orange);
+  }
+}
+
+	
+	
+	
 	h2{
 		background: #00008B;color:#fff;text-align:center;font-size:110%;padding:6px;border-top: 2px solid #FF0000;border-bottom: 1px solid #BDBDBD;text-shadow: 1px 1px 1px #000;
 	}
