@@ -1,7 +1,6 @@
 /* This is Gonna Be my personalized Css */
 
 /* Text Color */
-
 .txt-bhagwa{color:#fd790d;}
 .txt-rani{color:#fd0d49;}
 .txt-navy{color:#050a75;}
@@ -12,11 +11,11 @@
 .txt-yellow{color:#ffde05;}
 
 /* Background Color */
-.background-bhagwa{color:#fd790d;}
-.background-rani{color:#fd0d49;}
-.background-navy{color:#050a75;}
-.background-darkred{color:#780606;}
-.background-darkteal{color:#037368;}
-.background-violet{color:#320373;}
-.background-deeppink{color:#730339;}
-.background-yellow{color:#ffde05;}
+.bgc-bhagwa{background-color:#fd790d;}
+.bgc-rani{background-color:#fd0d49;}
+.bgc-navy{background-color:#050a75;}
+.bgc-darkred{background-color:#780606;}
+.bgc-darkteal{background-color:#037368;}
+.bgc-violet{background-color:#320373;}
+.bgc-deeppink{background-color:#730339;}
+.bgc-yellow{background-color:#ffde05;}
