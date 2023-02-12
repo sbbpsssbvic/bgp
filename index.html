@@ -897,7 +897,7 @@
            <br><br> <div class="card border-dark mx-sm-1 p-3">
                 <div class="card border-dark shadow text-danger p-3 my-card" ><span class="fa fa-map-pin fa-6px" aria-hidden="true"></span></div>
                 <div class="text-dark text-center mt-3"><h4>पिनकोड</h4></div>
-                <div class="text-dark text-center mt-2"><h5></h5></div>
+                <div class="text-dark text-center mt-2"><h5>224203</h5></div>
             </div>
         </div>					 
         <div class="col-md-3">
@@ -1177,7 +1177,7 @@ for(let n of counters) {
   const updateCount = () => {
     const target = + n.getAttribute('data-target');
     const count = + n.innerText;
-    const speed = 5000000; // change animation speed here
+    const speed = 5000000000; // change animation speed here
     const inc = target / speed; 
     if(count < target) {
       n.innerText = Math.ceil(count + inc);
