@@ -1216,7 +1216,7 @@ body { font-family: sans-serif; }
 
                    
  
-<script> 
+<script type="text/javascript"> 
 	//Preloader
 	var preloader=document.getElementById('loading'); function myFunction(){preloader.style.display='none';}
 	
@@ -1228,37 +1228,25 @@ body { font-family: sans-serif; }
     }
 });		    
 
-	
-	
-	​jQuery("#carouselak").owlCarousel({
-  autoplay: true,
-  rewind: true, /* use rewind if you don't want loop */
-  margin: 20,
-   /*
-  animateOut: 'fadeOut',
-  animateIn: 'fadeIn',
-  */
-  responsiveClass: true,
-  autoHeight: true,
-  autoplayTimeout: 7000,
-  smartSpeed: 800,
-  nav: true,
-  responsive: {
-    0: {
-      items: 1
-    },
 
-    600: {
-      items: 3
-    },
-
-    1024: {
-      items: 4
-    },
-
-    1366: {
-      items: 4
+	$('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,  
+    autoplay: true,
+		responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:5
+        }
     }
-  }
-});
+})
+	
+	
+	
 </script>        
