@@ -888,8 +888,8 @@
 	<div class="col-md-3">
           <br><br>  <div class="card bdr-bhagwa mx-sm-1 p-3">
                 <div class="card bdr-bhagwa shadow text-danger p-3 my-card" ><span class="fa fa-book fa-6px" aria-hidden="true"></span></div>
-                <div class="txt-bhagwa text-center mt-3"><h4>साक्षरता दर</h4></div>
-                <div class="txt-bhagwa text-center mt-2"><h5 class="counter" data-target="68.08">0</h5><h5>%</h5></div>
+                <div class="txt-bhagwa text-center mt-3"><h4>साक्षरता दर (%)</h4></div>
+                <div class="txt-bhagwa text-center mt-2"><h5 class="counter" data-target="68.08">0</h5></div>
             </div>
         </div>						  
 
@@ -1177,7 +1177,7 @@ for(let n of counters) {
   const updateCount = () => {
     const target = + n.getAttribute('data-target');
     const count = + n.innerText;
-    const speed = 2000; // change animation speed here
+    const speed = 500; // change animation speed here
     const inc = target / speed; 
     if(count < target) {
       n.innerText = Math.ceil(count + inc);
