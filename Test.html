@@ -229,3 +229,65 @@ body
 
 
 </style>
+
+
+<script>
+
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/player_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+var players=[],
+    iframes = $(".carousel__iframe");
+
+function onYouTubePlayerAPIReady() {
+  for (var i = 0; i < iframes.length; i++) {
+      var iframeItem = iframes[i];
+  
+      players[i] = new YT.Player(iframeItem, {
+        suggestedQuality: 'hd720'
+      });
+  }
+}
+
+$(function() {
+  $("#business_carousel").owlCarousel({
+    items: 1,
+    singleItem: true,
+    autoPlay: true,
+    navigation: true,
+    navigationText: ["", ""],
+    afterAction: function() {
+
+      for (var i = 0; i < players.length; ++i) {
+        players[i].pauseVideo();
+      }
+
+      $(".backdrop").show();
+    }
+  });
+
+  $(".backdrop").click(function() {
+    var i = $(this).hide().index('.backdrop');
+    players[i].playVideo();
+  });
+});
+
+// https://css-tricks.com/play-button-youtube-and-vimeo-api/
+// http://dnzl.ru/view_post.php?id=320
+// https://medium.com/object-partners/css-in-js-benefits-drawback-and-tooling-80286b03f9aa
+// https://codepen.io/pierrinho/pen/vNLGMa?editors=0010
+// http://static.bcs.ru/html/express2/demo/home.html
+
+
+
+
+
+
+
+
+
+
+</script>
+	
