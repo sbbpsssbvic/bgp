@@ -838,7 +838,7 @@
 
                 <div class="text-success text-center mt-3"><h4>लोग</h4></div>
 
-                <div class="text-success text-center mt-2 counter" data-target="2887"><h5>0</h5></div>
+                <div class="text-success text-center mt-2"><h5 class="counter" data-target="2887">0</h5></div>
 
             </div>
 
@@ -1177,7 +1177,7 @@ for(let n of counters) {
   const updateCount = () => {
     const target = + n.getAttribute('data-target');
     const count = + n.innerText;
-    const speed = 5000; // change animation speed here
+    const speed = 15000; // change animation speed here
     const inc = target / speed; 
     if(count < target) {
       n.innerText = Math.ceil(count + inc);
