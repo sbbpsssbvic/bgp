@@ -39,10 +39,7 @@
 
 	<link rel="stylesheet" type="text/css" href="https://benigaddaupur.netlify.app/akbootstrap.css"/> 
 
-	<link rel="stylesheet" type="text/css" href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/669264/owl.carousel.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/669264/owl.carousel.js"></script>
-  
+	
 	  
 	  
 	  <!-----Schema Data----->
@@ -998,39 +995,7 @@ body { font-family: sans-serif; }
 
 
 
-<section>
-  <div class="YT__layout">
-    <h2 class="YT__title">बेनीगद्दौपुर वीडियो गैलरी</h2>
-  </div>
-  <div class="video-block">
-	  <div class="owl-carousel owl-theme" id="business_carousel">
-		<div>
-			<div class="video-container">
-        <div class="backdrop"></div>
-				<iframe class="carousel__iframe" src="https://www.youtube.com/embed/1afpD7NCOhw?wmode=opaque&enablejsapi=1&rel=0" frameborder="0" allowfullscreen></iframe>
-			</div>
-		</div>
-		<div>
-			<div class="video-container">
-        <div class="backdrop"></div>
-				<iframe class="carousel__iframe" src="https://www.youtube.com/embed/NJaxTG3x6w8?wmode=opaque&enablejsapi=1&rel=0" frameborder="0" allowfullscreen></iframe>
-			</div>
-		</div>
-    <div>
-			<div class="video-container">
-        <div class="backdrop"></div>
-				<iframe class="carousel__iframe" src="https://www.youtube.com/embed/wgAUZomou0g?wmode=opaque&enablejsapi=1&rel=0" frameborder="0" allowfullscreen></iframe>
-			</div>
-		</div>
-    <div>
-			<div class="video-container">
-        <div class="backdrop"></div>
-				<iframe class="carousel__iframe" src="https://www.youtube.com/embed/ML1d6vVJP4k?wmode=opaque&enablejsapi=1&rel=0" frameborder="0" allowfullscreen></iframe>
-			</div>
-		</div>
-	</div>
-  </div>
-</section>
+
 
 
 
@@ -1071,187 +1036,7 @@ body { font-family: sans-serif; }
 	  
 
 	  
-$c-text-default = #212121;
-$c-link-default = rgba(0,0,0,.54);
-$c-link-default_active = rgba(0,0,0,.87);
 
-$c-divider = #ebebeb;
-
-body
-  font 400 20px/1.8 Roboto, sans-serif
-  color $c-text-default
-  
-  
-.YT
-  &__layout
-    width 95%
-    max-width 1400px
-    margin 0 auto
-    
-  &__header
-    padding 6px 0
-    box-shadow 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28)
-    
-  &__brand
-    display flex
-    align-items center
-    color $c-link-default
-    transition .2s all
-    text-decoration none
-    
-    &:hover
-      color $c-link-default_active
-    
-    
-  &__logo
-    width 32px
-    margin-right 16px
-    
-  &__thumbnail
-    display inline-block
-    margin 5px
-    
-    img 
-      max-width 160px
-      width 100%
-      height auto
-      
-  &__title
-    margin 1.67em 0 .83em
-    padding-bottom 3px
-    font-size 24px
-    line-height 1.33
-    font-weight 300
-    letter-spacing -.01em
-    border-bottom 1px solid $c-divider
-
-
-.video-block {
-	max-width: 850px;
-  padding: 0 50px;
-	margin: 40px auto 0;
-	position: relative;
-	animation-fill-mode: none; /* фикс chrome fullscreen mode*/
-/*   https://github.com/twbs/bootstrap/issues/24233
--webkit-backface-visibility: hidden
-62. fixed */
-
-}
-
-.video-container {
-	position: relative;
-	padding-bottom: 56.25%; /* 16:9 */
-	height: 0;
-	overflow: hidden;
-	background-color: #000;
-	border: 1px solid #f1f3f6;
-}
-
-.video-container .backdrop {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(255,255,255,0);
-    cursor: pointer;
-    z-index: 1;
-}
-
-.video-container iframe {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-}
-.video-block .owl-prev,
-.video-block .owl-next {
-	display: block;
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
-  width: 35px;
-	height: 35px;
-	z-index: 5;
-	cursor: pointer;
-	-webkit-transition: all 0.2s ease-out;
-	-moz-transition: all 0.2s ease-out;
-	-o-transition: all 0.2s ease-out;
-	transition: all 0.2s ease-out;
-}
-
-.video-block .owl-prev:after,
-.video-block .owl-next:after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    border-radius: 2px;
-    transform: rotate(45deg);
-}
-
-.video-block .owl-next {
-    right: -30px;
-}
-
-.video-block .owl-next:after {
-    border-right: 3px solid #002863;
-    border-top: 3px solid #002863;
-}
-
-.video-block .owl-next:hover {
-	right: -33px;
-}
-
-.video-block .owl-prev:after {
-    border-left: 3px solid #002863;
-    border-bottom: 3px solid #002863;
-}
-
-.video-block .owl-prev{
-    left: -30px;
-}
-
-.video-block .owl-prev:hover {
-	left: -33px;
-}
-
-.video-block .owl-pagination {
-    margin-top: 10px;
-	text-align: center;
-}
-
-.video-block .owl-page {
-	display: inline-block;
-    vertical-align: middle;
-}
-
-.video-block .owl-page span {
-	display: block;
-	margin-left: 8px;
-	width: 7px;
-	height: 7px;
-	background-color: #002863;
-    border: 2px solid #002863;
-    border-radius: 100%;
-}
-
-.video-block .owl-page.active span {
-    width: 11px;
-    height: 11px;
-    background-color: transparent;
-}	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
 	  
 	.divheading
 
@@ -1353,48 +1138,6 @@ body
     }
 });		    
 
-	//VideoGallery 
-	var tag = document.createElement('script');
-tag.src = "https://www.youtube.com/player_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-var players=[],
-    iframes = $(".carousel__iframe");
-
-function onYouTubePlayerAPIReady() {
-  for (var i = 0; i < iframes.length; i++) {
-      var iframeItem = iframes[i];
-  
-      players[i] = new YT.Player(iframeItem, {
-        suggestedQuality: 'hd720'
-      });
-  }
-}
-
-$(function() {
-  $("#business_carousel").owlCarousel({
-    items: 1,
-    singleItem: true,
-    autoPlay: true,
-    navigation: true,
-    navigationText: ["", ""],
-    afterAction: function() {
-
-      for (var i = 0; i < players.length; ++i) {
-        players[i].pauseVideo();
-      }
-
-      $(".backdrop").show();
-    }
-  });
-
-  $(".backdrop").click(function() {
-    var i = $(this).hide().index('.backdrop');
-    players[i].playVideo();
-  });
-});
-        
 	
 	
 </script>        
