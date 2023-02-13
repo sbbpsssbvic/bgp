@@ -824,7 +824,7 @@
 
                 <div class="text-info text-center mt-3"><h4>घर</h4></div>
 
-                <div class="text-info text-center mt-2"><h5 class="counter" data-target="480">0 </h5></div>
+                <div class="text-info text-center mt-2"><h5 id="counter" class="counter" data-target="480">0 </h5></div>
 
             </div>
 
@@ -838,7 +838,7 @@
 
                 <div class="text-success text-center mt-3"><h4>लोग</h4></div>
 
-                <div class="text-success text-center mt-2"><h5 class="counter" data-target="2887">0</h5></div>
+                <div class="text-success text-center mt-2"><h5 id="counter" class="counter" data-target="2887">0</h5></div>
 
             </div>
 
@@ -852,7 +852,7 @@
 
                 <div class="text-danger text-center mt-3"><h4>पुरुष</h4></div>
 
-                <div class="text-danger text-center mt-2"><h5 class="counter" data-target="1422">0</h5></div>
+                <div class="text-danger text-center mt-2"><h5 id="counter" class="counter" data-target="1422">0</h5></div>
 
             </div>
 
@@ -866,7 +866,7 @@
 
                 <div class="txt-rani text-center mt-3"><h4>महिलाएं</h4></div>
 
-                <div class="txt-rani text-center mt-2"><h5 class="counter" data-target="1465">0</h5></div>
+                <div class="txt-rani text-center mt-2"><h5 id="counter" class="counter" data-target="1465">0</h5></div>
 
             </div>
 
@@ -880,7 +880,7 @@
 
                 <div class="text-secondary text-center mt-3"><h4>बच्चे</h4></div>
 
-                <div class="text-secondary text-center mt-2"><h5 class="counter" data-target="360">0</h5></div>
+                <div class="text-secondary text-center mt-2"><h5 id="counter" class="counter" data-target="360">0</h5></div>
 
             </div>
 	
@@ -889,7 +889,7 @@
           <br><br>  <div class="card bdr-bhagwa mx-sm-1 p-3">
                 <div class="card bdr-bhagwa shadow text-danger p-3 my-card" ><span class="fa fa-book fa-6px" aria-hidden="true"></span></div>
                 <div class="txt-bhagwa text-center mt-3"><h4>साक्षरता दर</h4></div>
-                <div class="txt-bhagwa text-center mt-2"><h5 class="counter" data-target="68.08">0</h5></div>
+                <div class="txt-bhagwa text-center mt-2"><h5 id="counter" class="counter" data-target="68.08">0</h5></div>
             </div>
         </div>						  
 
@@ -1170,24 +1170,47 @@
         }
     }
 })
-	// Selector
-const counters = document.querySelectorAll('.counter');
-// Main function
-for(let n of counters) {
-  const updateCount = () => {
-    const target = + n.getAttribute('data-target');
-    const count = + n.innerText;
-    const speed = 100; // change animation speed here
-    const inc = target / speed; 
-    if(count < target) {
-      n.innerText = Math.ceil(count + inc);
-      setTimeout(updateCount, 1);
-    } else {
-      n.innerText = target;
+	
+	
+	$(document).ready(function () {
+  // Element to be observed
+  const counter = document.querySelector("#counter");
+
+  // Create new IntersectionObserver
+  const io = new IntersectionObserver((entries) => {
+    // Element enters the viewport
+    if (entries[0].intersectionRatio !== 0) {
+      $(".counter").each(function () {
+        var $this = $(this),
+          countTo = $this.attr("data-target");
+
+        $({ countNum: $this.text() }).animate(
+          {
+            countNum: countTo
+          },
+
+          {
+            duration: 1000,
+            easing: "linear",
+            step: function () {
+              $this.text(Math.floor(this.countNum));
+            },
+            complete: function () {
+              $this.text(this.countNum);
+              //alert('finished');
+            }
+          }
+        );
+      });
     }
-  }
-  updateCount();
-}
+  });
+  // Start observing #counter
+  io.observe(counter);
+});
+
+	
+	
+	
 	
 	
 </script>        
