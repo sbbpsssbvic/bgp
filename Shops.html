@@ -805,7 +805,18 @@ input[type="text"] {
 		width: 100%; height:100vh; background: #FFFEFFED url('https://media.tenor.com/k3VfwdRd6cEAAAAi/loading-load.gif') no-repeat center ; background-size:20%; z-index: 9999999;}
 	 
 	
-	
+	/* Zoom In effect */
+.card-body img {
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.card-body:hover img {
+	-webkit-transform: scale(1.3);
+	transform: scale(1.3);
+}
+
 	
 	
 	
