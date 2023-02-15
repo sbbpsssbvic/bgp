@@ -16,7 +16,7 @@ $(document).ready( function () {
     longitude = (position.coords.longitude);
     console.log("Input:\n" + latitude + " " + longitude);
     
-    var requestLink = "https://fcc-weather-api.glitch.me/api/current?lat=26.58155&lon=82.22925;
+    var requestLink = "https://fcc-weather-api.glitch.me/api/current?lat=" + latitude + "&lon=" + longitude;
     console.log("Query:\n" + requestLink);
     var myNum = false;
     $.get(requestLink, function(data, status){
