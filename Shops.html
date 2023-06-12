@@ -117,24 +117,24 @@
 <!----Header---->
 
 
-<nav class="bgcolornav sticky-top bg-light"> <div align="center" class=""><a class="" href="/"><img src="https://res.cloudinary.com/da0bxa4am/image/fetch/f_auto,q_auto/http://drive.google.com/uc%3Fid%3D1-cwAuHcV9uSbKTaozvJGrydZQs0BqIx9" width="400" height="40" class=" img-fluid align-top headimgak" alt="Benigaddaupur"></a></div></nav>
+<nav class="bgcolornav sticky-top bg-light"> <div align="center" class=""><a class="martop" href="/"><img src="https://res.cloudinary.com/da0bxa4am/image/fetch/f_auto,q_auto/http://drive.google.com/uc%3Fid%3D1-cwAuHcV9uSbKTaozvJGrydZQs0BqIx9" width="400" height="40" class=" img-fluid align-top martop headimgak" alt="Benigaddaupur"></a></div></nav>
 
 	
 	<!--shops -->
 <div class="text-light bg-dark" style=" ">
-<br><hr><br>
+<br><hr>
 
 <div class="wrap-box headboxak text-center"><h2 class="shophead">बेनीगद्दौपुर में स्थित दुकानें/सेवाएं </h2><p class="text-muted headdisc text-center">आप अपनी आवश्यकता के अनुसार दुकानें Search कर सकते हैं।</p></div>
-	<br><hr><br>
+	<hr><br>
 </div>
 <div class="container">
  
 	<div class="cardc"><small class="text-muted"><span class="text-primary fw-bold">आप सर्च कर सकते हैं:</span> नंबर, दुकान का नाम , कैटेगरी आदि लिखकर </small></div>
 	<div class="cardc"><small class="text-muted"><span class="text-dark fw-bold"> | </span><span class="text-danger fw-bold"> नोट:</span> लगभग दुकानों के नाम हिंदी में हैं</small></div>
   
-	<div class="row">
-    <div class="col-lg-6">
-      <input type="text" class="form-control" id="quicksearch" aria-describedby="filterIt" placeholder="🔍 नंबर, नाम, कैटेगरी, आदि लिखिए">
+	<div class="row sticky-top">
+    <div class="col-sm-6">
+      <input type="text" class="form-control rowak" id="quicksearch" aria-describedby="filterIt" placeholder="🔍 नंबर, नाम, कैटेगरी, आदि लिखिए">
     </div>   </div>
 
 <div id="loadingxx"></div>
@@ -751,7 +751,20 @@ input[type="text"] {
 	
 }
 .center-cont {border:2px solid teal;}
+	  .martop{margin-top:3.5%;}
+	  
 .btnmgn{margin-left: -22px; }
+
+
+.nav-shadd{
+  
+  box-shadow: 0px 2px 10px #999;
+}
+
+
+
+
+
 
 .card:hover {
 	-webkit-transform: translate(0, -8px);
@@ -785,8 +798,11 @@ input[type="text"] {
 	@media screen and (max-width: 600px){
 	.cardak{width:20.2rem; height:32.8rem;}
 	  .headdisc{font-size:90%;}
-	  .headimgak{width:80%; height:13%;}
+	  .headimgak{width:60%; height:9%;}
+	  .martop{margin-top:9%;}
 	  .shophead{font-size:130%;}
+	  .rowak{height:75%; margin-top:2%; font-size: 5px;}
+	 
 	}
 	
 	
@@ -798,7 +814,15 @@ input[type="text"] {
 	</style>      
 
 
-
+<script>
+$(window).scroll(function() {
+    if ($(window).scrollTop() > 10) {
+        $('#navBaar').addClass('nav-shadd');
+    } else {
+        $('#navBaar').removeClass('nav-shadd');
+    }
+});
+</script>
 
 
 <script>
