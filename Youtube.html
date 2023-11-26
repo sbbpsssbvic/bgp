@@ -9,7 +9,7 @@
         href="https://upload.wikimedia.org/wikipedia/commons/f/f4/Benigaddaupur_favicon-192x192.png?"
         type="image/x-icon" />
 
-   <!-----Bootstrap_5.2.2---->
+    <!-----Bootstrap_5.2.2---->
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
@@ -33,19 +33,41 @@
 </head>
 
 <body>
-    <div class="darkheader bg-ytblack">
-        <img src="img/Dark_Logo.png" alt="BGP DARK LOGO" class="dark-logo">
+    
+        <div class="darkheader bg-dark">
+            <img src="img/Dark_Logo.png" alt="BGP DARK LOGO" class="dark-logo" onclick="redirectToLink()">
 
-    </div>
+        </div>
+    
     <div class="title_holder"><br>
-        <div class="darkheader"><h1 class="text-uppercase" id="official">official YouTube Channel </h1></div>
-        <div class="darkheader"><p id="subs"><em>---- अपने गांव के आधिकारिक यूट्यूब चैनल को अभी सब्सक्राइब करें ----</em></p><br></div>
+        <div class="darkheader">
+            <h1 class="text-uppercase" id="official">official YouTube Channel </h1>
+        </div>
+        <div class="darkheader">
+            <p id="subs"><em>---- अपने गांव के आधिकारिक यूट्यूब चैनल को अभी सब्सक्राइब करें ----</em></p><br>
+        </div>
     </div>
 
     <div class="yt-section">
         <div class='sk-ww-youtube-channel-videos' data-embed-id='232132'></div>
         <script src='js/Youtube.js' async defer></script>
     </div>
+
+
+    <script>
+        function redirectToLink() {
+            // Replace 'your-redirect-url' with the actual URL you want to redirect to
+            window.location.href = '/index.html';
+        }
+    </script>
+
+
+
+
+
+
+
+
     <!-----Google Fonts----->
 
     <style>
@@ -80,9 +102,9 @@
         }
 
 
-body{
-    background-color: #f9f9f9;
-}
+        body {
+            background-color: #f9f9f9;
+        }
 
         .title_holder {
             background-color: aliceblue;
@@ -98,32 +120,38 @@ body{
         }
 
         .bg-ytblack {
-           background-color : #282828 ;
+            background-color: #282828;
         }
+
         .dark-logo {
-            width: 80%;
+            width: 78%;
             max-width: 100%;
             height: auto;
         }
 
         .yt-section {
-            margin-left: 5vw; 
-            margin-right: 5vw; 
-            display: flex; 
-            justify-content: center; 
+            margin-left: 5vw;
+            margin-right: 5vw;
+            display: flex;
+            justify-content: center;
             align-items: center;
         }
 
-        @media screen and (max-width: 425px){
-            #official{
+        @media screen and (max-width: 426px) {
+            #official {
                 font-size: 1.4em;
             }
-            #subs{
+
+            #subs {
                 font-size: 0.7em;
             }
-        }
 
-        
+            .dark-logo {
+                width: 100%;
+                max-width: 132%;
+                height: auto;
+            }
+        }
     </style>
 
 </body>
