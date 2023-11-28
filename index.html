@@ -251,7 +251,7 @@
       aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div align="right" class="collapse navbar-collapse of-hidden" id="navbarNavDropdown">
+    <div class="collapse navbar-collapse of-hidden" id="navbarNavDropdown">
       <ul class="navbar-nav fw-bold">
 
         <li class="nav-item fw-bold active"> <a id="grad-hover-nav" class="nav-link text-danger" href="/">होमपेज <span
@@ -314,7 +314,33 @@
 
 
       </ul>
+      <div class="yt-container">
+        <div class="yt-logo"><img src="/img/yt_logo.jpg" alt="Benigaddaupur Youtube Logo" class="logo-img"></div>
+        <div class="yt-details">
+          <div class="c-name">Benigaddaupur</div>
+          <div role="button" class="c-subs" onclick="ytredirectToLink()"> &nbsp;&nbsp;<i
+              class="fa-brands fa-youtube"></i> Subscribe </div>
+          <div id="yt-info">
+            <a> 27 videos </a>
+            <a>84 subscribers</a>
+            <a></a>
+
+
+          </div>
+        </div>
+      </div>
+
+      <script>
+        function ytredirectToLink() {
+          window.open('https://www.youtube.com/channel/UC4tV1tCZ8T_jDMOspgGyMJw?sub_confirmation=1', '_blank');
+        }
+      </script>
+
+
     </div>
+
+
+
   </div>
 </nav>
 
@@ -649,7 +675,8 @@
   <div align="center"></div>
   <div style="margin-left:5px;" class='elm1'>
     <div class='card card-smw cardmobile my-2 mb-3'>
-      <div class='card-header py-2 fw-bold fs-6 text-light bgc-teal'><i class="fa-solid fa-circle-info"></i> अन्य सेवाएं/जानकारियां</div>
+      <div class='card-header py-2 fw-bold fs-6 text-light bgc-teal'><i class="fa-solid fa-circle-info"></i> अन्य
+        सेवाएं/जानकारियां</div>
       <a>
         <a id="grad-hover" style="margin:2.5px; text-align:left;" class=" font-gov" data-bs-toggle="offcanvas"
           data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
@@ -843,7 +870,7 @@
                     </div>
                     <div id="weather-img"></div>
                     <div id="forecast-description"></div>
-<!----- Forecast ----->
+                    <!----- Forecast ----->
                     <a class="weatherwidget-io dislink" target="_blank"
                       href="https://forecast7.com/en/26d5382d22/beni-gaddau-pur/" data-label_1="बेनीगद्दौपुर"
                       data-label_2="मौसम (पूर्वानुमान)" data-font="Times New Roman" data-icons="Climacons Animated"
@@ -878,7 +905,8 @@
 
   <div style="margin-left:5px;" class='elm1'>
     <div class='card card-smw cardmobile my-2 mb-3'>
-      <div class='card-header py-2 fw-bold fs-6 text-light text-bg-secondary'><i class="fa-solid fa-users-line"></i> ग्रामीण सेवाएं</div>
+      <div class='card-header py-2 fw-bold fs-6 text-light text-bg-secondary'><i class="fa-solid fa-users-line"></i>
+        ग्रामीण सेवाएं</div>
       <a>
         <a href="/photogallery" id="grad-hover" style="margin:2.5px; text-align:left;" class=" font-gov">
           <i class="fa fa-hand-point-right"></i> गांव के प्रमुख स्थानों की फोटो गैलरी
@@ -905,7 +933,8 @@
 
   <div style="margin-left:5px;" class='elm1'>
     <div class='card cardmobile card-smw my-2 mb-3'>
-      <div class='card-header py-2 fw-bold fs-6 text-light bgc-teal'><i class="fa-brands fa-staylinked"></i> महत्वपूर्ण लिंक</div>
+      <div class='card-header py-2 fw-bold fs-6 text-light bgc-teal'><i class="fa-brands fa-staylinked"></i> महत्वपूर्ण
+        लिंक</div>
       <a>
         <a target="_blank" href="https://jansunwai.up.nic.in/" id="grad-hover" style="margin:2.5px; text-align:left;"
           class=" font-gov">
@@ -1015,7 +1044,6 @@
   .beta p {
     font-size: 12px;
     margin: 0;
-    /* Remove default margin */
   }
 
   .beta a {
@@ -1046,9 +1074,6 @@
     }
   }
 
-
-
-
   .notification {
     margin-right: 6px;
     bottom: 4px;
@@ -1056,6 +1081,74 @@
 
   .border-height-bdc {
     height: 18.2rem
+  }
+
+  /*  Youtube Channel Nav css  */
+
+  .yt-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    margin-left: 10vw;
+    top: 0%;
+    margin-top: 0%;
+  }
+
+  .yt-logo {
+
+    overflow: hidden;
+    border-radius: 50%;
+    width: 4.8vw;
+    margin: 10px;
+  }
+
+  .yt-details {
+    color: #282828;
+    margin: 0% 1% 0% 1%;
+  }
+
+
+  .logo-img {
+    width: 100%;
+  }
+
+  .c-name {
+    font-size: 24px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding-bottom: 0.4vh;
+  }
+
+  .c-subs {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 14px;
+    padding-bottom: 0.5vh;
+    padding-top: 0.3vh;
+    background-color: rgb(248, 0, 50);
+    color: #ffffff;
+    width: 55%;
+    border-radius: 5px;
+    vertical-align: center;
+  }
+
+
+
+  #yt-info {
+    margin-top: 4px;
+    margin-bottom: 0;
+
+  }
+
+  #yt-info a {
+    margin: 3px;
+    font-size: smaller;
+  }
+
+  @media screen and (max-width: 800px) {
+    .yt-logo {
+      width: 25vw;
+    }
+
   }
 </style>
 
