@@ -32,12 +32,14 @@
 
 <div style="margin:4%; ">
 
-<form class="row g-3" action="https://formsubmit.co/benigaddaupur@gmail.com" method="POST">
+<form class="row g-3" action="https://formsubmit.co/benigaddaupur@gmail.com" method="POST" enctype="multipart/form-data">
 
   <input type="hidden" name="_subject" value="New submission! | SBBPSSSBVIC">      
    <input type="hidden" name="_captcha" value="false">    
       <input type="hidden" name="_template" value="table">
-        
+      <input type="hidden" name="_next" value="https://Benigaddaupur.netlify.app/FormSubmitted.html">
+      
+
  <div class="col-md-4">
     <label for="inputName" class="form-label fw-semibold">Name</label>
     <input type="text" class="form-control" name="NAME" id="inputName" onkeyup="this.value = this.value.toUpperCase();"  placeholder="Full Name" required>
@@ -107,7 +109,7 @@
 
   
 
-  <div class="col-md-6">
+  <div class="col-md-3">
 
     <label for="inputCity" class="form-label fw-semibold">City</label>
 
@@ -137,6 +139,14 @@
 
   </div>
 
+  <div class="col-md-3">
+
+    <label for="inputMedia" class="form-label  fw-semibold">Photo</label>
+
+    <input type="file" class="form-control" name="ATTACHMENT" accept="image/png, image/jpeg" id="inputMedia" placeholder="Your Area Pincode">
+
+  </div>
+  
   <div align="left" class="col-md-6">
 
     <div align="left" class="form-check">
