@@ -16,9 +16,7 @@
 
   <!-----Meta---->
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta name="theme-color" content="#397f9e">
 
@@ -260,6 +258,10 @@
       width: 65px;
     }
 
+    .w-100-i {
+      overflow-x: hidden;
+    }
+
     @media only screen and (max-width: 960px) {
       .w-shops {
         width: 100%
@@ -291,6 +293,10 @@
 
       .of-hidden {
         overflow: hidden;
+      }
+
+      .w-100-i {
+        overflow-x: hidden;
       }
     }
   </style>
@@ -1226,7 +1232,9 @@
       vertical-align: center;
     }
 
-
+    body {
+      overflow-x: hidden;
+    }
 
     #yt-info {
       margin-top: 4px;
@@ -2062,6 +2070,20 @@
 
         body {
           overflow-x: hidden;
+        }
+
+        .w-100-i {
+        overflow-x: hidden;
+      }
+
+        @media screen and (max-width: 700px) {
+          body {
+            overflow-x: hidden;
+            /* or visible, depending on your needs */
+          }
+          .w-100-i {
+        overflow-x: hidden;
+      }
         }
       </style>
     </div>
