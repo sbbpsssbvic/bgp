@@ -228,8 +228,74 @@
   </div>
 
   <!----Header---->
-    
-<!----------Navigation Bar---------->
+
+  <!-- Navigation Bar style -->
+
+  <style>
+    .w-shops {
+      width: 95px;
+    }
+
+    .w-weather {
+      width: 124px;
+    }
+
+    .w-gallery {
+      width: 70px;
+    }
+
+    .w-fest {
+      width: 80px;
+    }
+
+    .w-daan {
+      width: 86px;
+    }
+
+    .w-contact {
+      width: 61px;
+    }
+
+    .w-home {
+      width: 65px;
+    }
+
+    @media only screen and (max-width: 960px) {
+      .w-shops {
+        width: 100%
+      }
+
+      .w-weather {
+        width: 100%;
+      }
+
+      .w-gallery {
+        width: 100%;
+      }
+
+      .w-fest {
+        width: 100%;
+      }
+
+      .w-daan {
+        width: 100%;
+      }
+
+      .w-contact {
+        width: 100%;
+      }
+
+      .w-home {
+        width: 100%;
+      }
+
+      .of-hidden {
+        overflow: hidden;
+      }
+    }
+  </style>
+
+  <!----------Navigation Bar---------->
 
   <nav id="navBaar" class="navbar nav-shadd navbar-expand-lg bg-light sticky-top navbar-light w-100-i">
     <div class="container-fluid">
@@ -246,19 +312,19 @@
       <div class="collapse navbar-collapse of-hidden" id="navbarNavDropdown">
         <ul class="navbar-nav fw-bold">
 
-          <li class="nav-item fw-bold active"> <a id="grad-hover-nav" class="nav-link text-danger" href="/">होमपेज <span
-                class="sr-only">(current) </span></a> </li>
+          <li class="nav-item fw-bold active"> <a id="grad-hover-nav" class="nav-link text-danger w-home"
+              href="/">होमपेज <span class="sr-only">(current) </span></a> </li>
 
-          <li class="nav-item fw-bold"> <a id="grad-hover-nav" class="nav-link"
+          <li class="nav-item fw-bold"> <a id="grad-hover-nav" class="nav-link w-contact"
               href="http://wa.me/918127791741">सम्पर्क</a> </li>
 
-          <li class="nav-item fw-bold"> <a id="grad-hover-nav" class="nav-link  " href="/donation"
+          <li class="nav-item fw-bold"> <a id="grad-hover-nav" class="nav-link w-daan " href="/donation"
               data-bs-toggle="modal" data-bs-target="#exampleModal"> दानपेटिका </a> </li>
 
           <li class="nav-item fw-bold dropdown">
 
-            <a id="grad-hover-nav" class="nav-link dropdown-toggle " href="#" id="navbarDropdownMenuLink" role="button"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">त्योहार
+            <a id="grad-hover-nav" class="nav-link w-fest dropdown-toggle " href="#" id="navbarDropdownMenuLink"
+              role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">त्योहार
             </a>
 
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -278,8 +344,8 @@
 
           <li class="nav-item dropdown">
 
-            <a id="grad-hover-nav" class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> गैलरी </a>
+            <a id="grad-hover-nav" class="nav-link w-gallery dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+              role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> गैलरी </a>
 
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
@@ -293,7 +359,7 @@
 
           <li class="nav-item">
 
-            <a id="grad-hover-nav" class="nav-link w-navak" href="/shops">दुकानें खोजें </a>
+            <a id="grad-hover-nav" class="nav-link w-shops" href="/shops">दुकानें खोजें </a>
 
           </li>
 
@@ -391,72 +457,6 @@
     </div>
 
   </div>
-
-  <!-- Navigation Bar style -->
-
-  <style>
-    .w-shops {
-      width: 95px;
-    }
-
-    .w-weather {
-      width: 124px;
-    }
-
-    .w-gallery {
-      width: 70px;
-    }
-
-    .w-fest {
-      width: 80px;
-    }
-
-    .w-daan {
-      width: 86px;
-    }
-
-    .w-contact {
-      width: 61px;
-    }
-
-    .w-home {
-      width: 65px;
-    }
-
-    @media only screen and (max-width: 960px) {
-      .w-shops {
-        width: 100%
-      }
-
-      .w-weather {
-        width: 100%;
-      }
-
-      .w-gallery {
-        width: 100%;
-      }
-
-      .w-fest {
-        width: 100%;
-      }
-
-      .w-daan {
-        width: 100%;
-      }
-
-      .w-contact {
-        width: 100%;
-      }
-
-      .w-home {
-        width: 100%;
-      }
-
-      .of-hidden {
-        overflow: hidden;
-      }
-    }
-  </style>
 
   <!----------Welcome Audio---------->
 
@@ -743,7 +743,7 @@
             सेवाएं/जानकारियां
           </div>
           <a>
-            <a  id="grad-hover" style="margin:2.5px; text-align:left;" class=" font-gov" data-bs-toggle="offcanvas"
+            <a id="grad-hover" style="margin:2.5px; text-align:left;" class=" font-gov" data-bs-toggle="offcanvas"
               data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
               <div data-aos="fade-up" data-aos-duration="1000"><i class="fa fa-hand-point-right"></i> प्रशासनिक सुविधाएं
               </div>
@@ -759,7 +759,7 @@
 
 
           <!------------ Weather Info ----------->
-          
+
           <a id="grad-hover" style="margin:2.5px; text-align:left;" class=" font-gov" data-bs-toggle="modal"
             data-bs-target="#staticWeather">
             <div data-aos="fade-up" data-aos-duration="1000"><i class="fa fa-hand-point-right"></i> बेनीगद्दौपुर - मौसम
