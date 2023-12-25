@@ -395,7 +395,12 @@
 
         <script>
           function ytredirectToLink() {
-            window.open('https://www.youtube.com/channel/UC4tV1tCZ8T_jDMOspgGyMJw?sub_confirmation=1', '_blank');
+            var isMobile = window.innerWidth <= 800; 
+            if (isMobile) {
+              window.location.href = 'https://www.youtube.com/channel/UC4tV1tCZ8T_jDMOspgGyMJw?sub_confirmation=1';
+            } else {
+              window.open('https://www.youtube.com/channel/UC4tV1tCZ8T_jDMOspgGyMJw?sub_confirmation=1', '_blank');
+            }
           }
         </script>
 
@@ -1230,8 +1235,14 @@
       width: 55%;
       border-radius: 5px;
       vertical-align: center;
+      transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
+    .c-subs:hover {
+      background-color: hsl(345, 100%, 46%);
+      transform: scale(1.05);
+    }
+    
     body {
       overflow-x: hidden;
     }
